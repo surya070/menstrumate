@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Period Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #dd8d94;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .entry-container {
+            background: #E66A75;
+            padding: 6em 3.5em;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #6C1827;
+            margin-bottom: 1em;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="date"] {
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            padding: 0.5em;
+            border: none;
+            border-radius: 3px;
+            background-color: #9B3A51;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #7F2638;
+        }
+        a {
+            margin-top: 1em;
+            color: #6C1827;
+            display: inline-block;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="entry-container">
+        <h1>Edit Period Entry</h1>
+        <form method="POST" action="/edit/{{ entry[0] }}">
+            <input type="date" name="start_date" placeholder="Start Date" required>
+            <input type="date" name="end_date" placeholder="End Date" required>
+            <input type="submit" value="Submit">
+        </form>
+        <a href="/view">View Entries</a>
+    </div>
+</body>
+</html>
