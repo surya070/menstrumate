@@ -72,11 +72,10 @@ def logout():
     return redirect(url_for('log'))
 
 @app.route('/')
-def index():
-    if user_id:
-        return redirect(url_for('view_entries'))
-    else:
-        return render_template('login.html')
+def route():
+    global user_id
+    user_id=None
+    return render_template('login.html')
 
 @app.route('/ad', methods=['GET'])
 def ad():
